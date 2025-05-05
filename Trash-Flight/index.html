@@ -34,6 +34,13 @@
         productVersion: "1.0",
         matchWebGLToCanvasSize: false, // 이 주석을 해제하면 WebGL 크기와 캔버스 크기를 따로 제어할 수 있습니다.
         // devicePixelRatio: 1, // 이 주석을 해제하면 고해상도 디스플레이에서 저해상도 렌더링을 설정할 수 있습니다.
+      }).then((unityInstance) => {
+        // WebGL 렌더링 크기 설정
+        unityInstance.Module.webglContext.canvas.width = 1920;
+        unityInstance.Module.webglContext.canvas.height = 1080;
+
+        // WebGL의 캔버스 크기를 직접 설정
+        WebGL.setCanvasSize(1920, 1080);  // WebGL 캔버스 크기를 1920x1080으로 설정
       });
     </script>
   </body>
