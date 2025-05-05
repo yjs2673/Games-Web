@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity WebGL Player | Trash-Flight</title>
-    <link rel="shortcut icon" href="TemplateData/favicon.ico">
-    <link rel="stylesheet" href="TemplateData/style.css">
+    <link rel="shortcut icon" href="Trash-Flight/TemplateData/favicon.ico"> <!-- 경로 수정 -->
+    <link rel="stylesheet" href="Trash-Flight/TemplateData/style.css"> <!-- 경로 수정 -->
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
@@ -56,12 +56,12 @@
         updateBannerVisibility();
       }
 
-      var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/Trash-Flight.loader.js";
+      var buildUrl = "Trash-Flight/Build";  <!-- 경로 수정 -->
+      var loaderUrl = buildUrl + "/Trash-Flight.loader.js";  <!-- 경로 수정 -->
       var config = {
-        dataUrl: buildUrl + "/Trash-Flight.data",
-        frameworkUrl: buildUrl + "/Trash-Flight.framework.js",
-        codeUrl: buildUrl + "/Trash-Flight.wasm",
+        dataUrl: buildUrl + "/Trash-Flight.data",  <!-- 경로 수정 -->
+        frameworkUrl: buildUrl + "/Trash-Flight.framework.js",  <!-- 경로 수정 -->
+        codeUrl: buildUrl + "/Trash-Flight.wasm",  <!-- 경로 수정 -->
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "Trash-Flight",
@@ -89,7 +89,6 @@
         // To lower canvas resolution on mobile devices to gain some
         // performance, uncomment the following line:
         // config.devicePixelRatio = 1;
-
 
       } else {
         // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
