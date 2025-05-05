@@ -6,11 +6,13 @@
     <title>Unity WebGL Player | Trash-Flight</title>
   </head>
   <body style="text-align: center; padding: 0; border: 0; margin: 0;">
-    <canvas id="unity-canvas" width=1080 height=1920 tabindex="-1" style="width: 1080px; height: 1920px; background: #231F20"></canvas>
-    <script src="Build/Trash-Flight.loader.js"></script>
+    <!-- Canvas 크기 설정 (1080 x 1920) -->
+    <canvas id="unity-canvas" width="1080" height="1920" tabindex="-1" style="width: 1080px; height: 1920px; background: #231F20"></canvas>
+    <!-- Unity WebGL Loader Script 수정 -->
+    <script src="Trash-Flight/Build/Trash-Flight.loader.js"></script>
     <script>
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        // Mobile device style: fill the whole browser client area with the game canvas:
+        // 모바일 장치에서는 전체 화면에 맞게 캔버스를 크기 조정
         var meta = document.createElement('meta');
         meta.name = 'viewport';
         meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
@@ -24,16 +26,17 @@
         document.body.style.textAlign = "left";
       }
 
+      // Unity WebGL 인스턴스 생성
       createUnityInstance(document.querySelector("#unity-canvas"), {
-        dataUrl: "Build/Trash-Flight.data",
-        frameworkUrl: "Build/Trash-Flight.framework.js",
-        codeUrl: "Build/Trash-Flight.wasm",
+        dataUrl: "Trash-Flight/Build/Trash-Flight.data",  // 수정된 경로
+        frameworkUrl: "Trash-Flight/Build/Trash-Flight.framework.js",  // 수정된 경로
+        codeUrl: "Trash-Flight/Build/Trash-Flight.wasm",  // 수정된 경로
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "Trash-Flight",
         productVersion: "1.0",
-        // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
-        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+        // matchWebGLToCanvasSize: false, // 이 주석을 해제하면 WebGL 크기와 캔버스 크기를 따로 제어할 수 있습니다.
+        // devicePixelRatio: 1, // 이 주석을 해제하면 고해상도 디스플레이에서 저해상도 렌더링을 설정할 수 있습니다.
       });
     </script>
   </body>
