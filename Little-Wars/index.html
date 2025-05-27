@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>Undead Survivor</title>
+	<title>Little Wars</title>
 	<style>
 		html,
 		body {
@@ -42,17 +42,17 @@
 
 <body>
 	<div id="gameContainer">
-		<canvas id="unity-canvas" width="1080" height="1920" data-pixel-art="true"></canvas>
-		<script src="Build/Undead-Survivor.loader.js"></script>
+		<canvas id="unity-canvas" width="1900" height="900" data-pixel-art="true"></canvas>
+		<script src="Build/Little-Wars.loader.js"></script>
 		<script>
 			var canvas = document.querySelector("#unity-canvas");
 			var config = {
-				dataUrl: "Build/Undead-Survivor.data",
-				frameworkUrl: "Build/Undead-Survivor.framework.js",
-				codeUrl: "Build/Undead-Survivor.wasm",
+				dataUrl: "Build/Little-Wars.data.br",
+				frameworkUrl: "Build/Little-Wars.framework.js.br",
+				codeUrl: "Build/Little-Wars.wasm.br",
 				streamingAssetsUrl: "StreamingAssets",
 				companyName: "DefaultCompany",
-				productName: "Undead Survivor",
+				productName: "Little Wars",
 				productVersion: "1.0",
 			};
 			var scaleToFit;
@@ -75,15 +75,15 @@
 					w = window.innerWidth;
 					h = window.innerHeight;
 
-					var r = 1920 / 1080;
+					var r = 900 / 1900;
 
 					if (w * r > window.innerHeight) {
 						w = Math.min(w, Math.ceil(h / r));
 					}
 					h = Math.floor(w * r);
 				} else {
-					w = 1080;
-					h = 1920;
+					w = 1900;
+					h = 900;
 				}
 
 				container.style.width = canvas.style.width = w + "px";
